@@ -1,0 +1,28 @@
+{
+  "guests": [
+    {
+			"guestTitle": "Mr",
+			"guestFirstName": "Joe",
+			"guestName": "Smith",
+			"guestEmail": "joe@example.com",
+			"guestPhone": "+123456789",
+			"guestMobile": "09 87654321",
+			"guestFax": "0123456",
+			"guestAddress": "1 Big Street",
+			"guestCity": "London",
+			"guestPostcode": "EX 1234",
+			"guestCountry": "United_Kingdom",
+			"guestArrivalTime": "late, very late",
+			"guestVoucher": "give me discount",
+			"guestComments": "Non smoking please",
+			"guestCardType": "VISA",
+			"guestCardNumber": "0000000000000000",
+			"guestCardName": "Mr Smith",
+			"guestCardExpiry": "01/17",
+			"guestCardCVV": "000",
+			"guestCardNote": "a note",
+			"message": "text",
+			"custom1": "text"
+		}
+  ]
+}
