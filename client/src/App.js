@@ -2,32 +2,16 @@ import { useState } from "react";
 import { useLogger } from "react-use";
 import styled from "styled-components";
 
-import "assets/css/global.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AddTourPackage from "components/pages/AddTourPackage";
+import DashboardHeader from "components/layout/DashboardHeader";
+import DashboardSideNav from "components/layout/DashboardSideNav";
+import DashboardMain from "components/layout/DashboardMain";
 
-const Page = styled.div`
-	position: relative;
-	height: 100%;
-	width: 100%;
-	padding: 10px;
-	.form {
-		display: flex;
-		flex-direction: column;
-	}
-`;
-
-function Form({ children, onSubmit, ...props }) {
-	return (
-		<form className="form" onSubmit={onSubmit} {...props}>
-			{children}
-		</form>
-	);
-}
-
-const Input = styled.input.attrs(({ type, placeholder, name }) => {
-	return { type: type || "text", placeholder: placeholder || `Please enter ${name}` };
-})`
-	display: block;
-`;
+import "assets/css/vendor/normalize.css";
+import "assets/css/vendor/bootstrap-grid.css";
+import "assets/css/vendor/bootstrap-utils.css";
+import "assets/css/styles.css";
 
 function App() {
 	useLogger("App");
@@ -48,12 +32,19 @@ function App() {
 
 	console.log(values);
 	return (
-		<Page>
-			<Form onSubmit={handleSubmit}>
-				<Input type="text" name="title" onChange={handleChange} />
-				<Input type="file" name="image" accept="image/*" onChange={onImageChange} />
-			</Form>
-		</Page>
+		<div className="bootstrap-wrapper">
+			<div id="dashboard" className="dashboard-container">
+				<BrowserRouter>
+					<DashboardHeader />
+					<DashboardSideNav />
+					<DashboardMain>
+						<Routes>
+							<Route exact path="/" element={<AddTourPackage />} />
+						</Routes>
+					</DashboardMain>
+				</BrowserRouter>
+			</div>
+		</div>
 	);
 }
 
