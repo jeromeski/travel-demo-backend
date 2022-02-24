@@ -1,5 +1,4 @@
 import React from "react";
-import { useSize } from "react-use";
 import styled from "styled-components";
 import { bp } from "utils/bp";
 
@@ -13,7 +12,7 @@ const SideNav = styled.div`
 	}
 	@media (max-width: ${bp.md}) {
 		position: fixed;
-		top: 8%;
+		top: 7%;
 		width: 100%;
 		height: 75px;
 		z-index: 5;
